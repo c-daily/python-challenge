@@ -35,3 +35,22 @@ print(f"Total: ${sum(profit)}")
 print(f"Average Change: {round(sum(monthly_change)/len(monthly_change),2)}")
 print(f"Greatest Increase in Profits: {monthly_total[max_profit_month]} (${(str(max_profit_decrease))})")
 print(f"Greatest Decrease in Profits: {monthly_total[max_profit_month]} (${(str(min_profit_month))})")
+
+#Define output path for new file called Budget_Analysis.txt
+output_path = os.path.join("Analysis", "Budget_Analysis.txt")
+
+#Write information into output file
+with open(output_path,"w") as file:
+    file.write("Financial Analysis")
+    file.write("\n")
+    file.write("----------------------------")
+    file.write("\n")
+    file.write(f"Total Months: {len(monthly_total)}")
+    file.write("\n")
+    file.write(f"Total: ${sum(profit)}")
+    file.write("\n")
+    file.write(f"Average Change: {round(sum(monthly_change)/len(monthly_change),2)}")
+    file.write("\n")
+    file.write(f"Greatest Increase in Profits: {monthly_total[max_profit_month]} (${(str(max_profit_increase))})")
+    file.write("\n")
+    file.write(f"Greatest Decrease in Profits: {monthly_total[min_profit_month]} (${(str(max_profit_decrease))})")
