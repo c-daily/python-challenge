@@ -63,6 +63,7 @@ with open(output_path, 'w') as file:
     file.write(f'Total Votes: {total_votes}')
     file.write("\n")
     file.write("----------------------------")
+    file.write("\n")
     for unique_candidate in candidate_list:
         votes = counted_votes[candidate_list.index(unique_candidate)]
         percent_vote = (votes/total_votes) * 100
@@ -70,8 +71,9 @@ with open(output_path, 'w') as file:
             winner = unique_candidate
             winning_votes = votes
         file.write(f'{unique_candidate}: {round(percent_vote,2)}% ({votes})' )
-    file.write("\n")
+        file.write("\n")
     file.write("----------------------------")
+    file.write("\n")
     file.write(f'Winner: {winner}')
     file.write("\n")
     file.write("----------------------------")
