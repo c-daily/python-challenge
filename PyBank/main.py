@@ -7,6 +7,7 @@ monthly_total = []
 profit = []
 monthly_change = []
 
+#Read in budget_data.csv
 with open(csvpath, encoding = 'utf-8') as budget_csv:
 
     csvreader = csv.reader(budget_csv, delimiter=',')
@@ -19,8 +20,18 @@ with open(csvpath, encoding = 'utf-8') as budget_csv:
     
     for i in range(len(monthly_total)-1):
         monthly_change.append(profit[i+1]-profit[i])
-    
+
+#Define min and max profit variables    
 max_profit_increase = max(monthly_change)
 max_profit_decrease = min(monthly_change)
 max_profit_month = monthly_change.index(max(monthly_change)) + 1
 min_profit_month = monthly_change.index(min(monthly_change)) + 1 
+
+#Add print statements to print to terminal
+print("Financial Analysis")
+print("-----------------------")
+print(f"Total Months: {len(monthly_change)}")
+print(f"Total: ${sum(profit)}")
+print(f"Average Change: {round(sum(monthly_change)/len(monthly_change),2)}")
+print(f"Greatest Increase in Profits: {monthly_total[max_profit_month]} (${(str(max_profit_decrease))})")
+print(f"Greatest Decrease in Profits: {monthly_total[max_profit_month]} (${(str(min_profit_month))})")
