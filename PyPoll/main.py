@@ -30,6 +30,19 @@ with open(csvpath, encoding= 'utf-8') as election_csv:
                 vote_tally = counted_votes[candidate_index]
                 counted_votes[candidate_index] = vote_tally + 1
 
-                   
+print('Election Results')
+print('----------------')
+print(f'Total Votes: {total_votes}')
+print('----------------')
+
+winning_votes = 0
+
+for unique_candidate in candidate_list:
+    votes = counted_votes[candidate_list.index(unique_candidate)]
+    percent_vote = (votes/total_votes) * 100
+    if votes >  winning_votes:
+        winner = unique_candidate
+        winning_votes = votes
+    print(unique_candidate + ':' + round(percent_vote,2 + '%' + ) )
         
 
