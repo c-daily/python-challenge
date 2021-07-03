@@ -27,7 +27,9 @@ with open(csvpath, encoding= 'utf-8') as election_csv:
 
             else:
                 candidate_index = candidate_list.index(unique_candidate)
-                
+                vote_tally = counted_votes[candidate_index]
+                counted_votes[candidate_index] = vote_tally + 1
+
                    
         
 
