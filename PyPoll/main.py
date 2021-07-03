@@ -49,6 +49,7 @@ for unique_candidate in candidate_list:
 
 print('----------------')
 print(f'Winner: {winner}')
+print('----------------')
 
         
 
