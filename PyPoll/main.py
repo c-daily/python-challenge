@@ -51,5 +51,22 @@ print('----------------')
 print(f'Winner: {winner}')
 print('----------------')
 
+#Define output path for new file called Election_Analysis.txt
+output_path = os.path.join('Analysis', 'Election_Analysis.txt')
+
+#Write information to output file
+with open(output_path, 'w') as file:
+    file.write('Election Analysis')
+    file.write("\n")
+    file.write("----------------------------")
+    file.write("\n")
+    file.write(f'Total Votes: {total_votes}')
+     file.write("\n")
+    file.write("----------------------------")
+    
+
+
+
+
         
 
